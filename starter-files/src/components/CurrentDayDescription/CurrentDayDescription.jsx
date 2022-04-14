@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const CurrentDayDescription = () => (
+import CurrentDayDescriptionItem from '../CurrentDayDescriptionItem';
+
+const CurrentDayDescription = forecast => (
     <div className="mt-4 mt-md-2">
-        <div className="d-flex flex-column mb-2"></div>
+        <div className="d-flex flex-column mb-2">
+            {forecast.currentDayDetails.map(item => (
+                <CurrentDayDescriptionItem {...item} key={item.name} />
+            ))}
+        </div>
     </div>
 );
+
+CurrentDayDescription.propTypes = { forecast: PropTypes.array };
 
 export default CurrentDayDescription;
