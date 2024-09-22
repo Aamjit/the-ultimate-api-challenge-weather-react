@@ -3,12 +3,18 @@ import UpcomingDaysForecastItem from '../UpcomingDaysForecastItem/UpcomingDaysFo
 
 import styles from './UpcomingDaysForecast.module.css';
 
-const UpcomingDaysForecast = ({ days }) => (
-    <ul className={`${styles.weekList} d-flex justify-content-between p-0`}>
-        {days.map(item => (
-            <UpcomingDaysForecastItem {...item} key={item.weekday} />
-        ))}
-    </ul>
-);
+const UpcomingDaysForecast = props => {
+    // const { day, night, maxTemperature, minTemperature, weekday } = props;
+
+    const { days } = props;
+
+    return (
+        <ul className={`${styles.weekList} d-flex justify-content-between gap-4 flex-wrap p-0 w-full`}>
+            {days.map(item => (
+                <UpcomingDaysForecastItem {...item} key={item.weekday} />
+            ))}
+        </ul>
+    );
+};
 
 export default UpcomingDaysForecast;

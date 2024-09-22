@@ -8,21 +8,23 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 import styles from './Forecast.module.css';
 
-const Forecast = ({ forecast }) => (
-    <Container className={styles.box}>
-        <Row>
-            <Col xs={12} md={4}>
-                <div className={styles.card}>
-                    <CurrentDay {...forecast.currentDay} />
-                </div>
-            </Col>
-            <Col xs={12} md={8} className="d-flex flex-column justify-content-between">
-                <CurrentDayDescription {...forecast} />
-                <UpcomingDaysForecast days={forecast.comingDays} />
-            </Col>
-        </Row>
-    </Container>
-);
+const Forecast = ({ forecast }) => {
+
+    return (
+        <Container className={`${styles.box} w-full h-full`}>
+            <Row className="gap-4">
+                <Col xs={12}>
+                    {forecast?.currentDay && <CurrentDay {...forecast?.currentDay} />}
+                    <hr />
+                </Col>
+                <Col xs={12} className="py-8 px-8">
+                    {/* <CurrentDayDescription {...forecast} /> */}
+                    <UpcomingDaysForecast days={forecast.comingDays} />
+                </Col>
+            </Row>
+        </Container>
+    );
+};
 
 Forecast.propTypes = {
     forecast: PropTypes.shape({

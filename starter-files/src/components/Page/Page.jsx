@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
 import Header from '../Header';
 import Form from '../Form';
@@ -12,15 +12,16 @@ import styles from './Page.module.css';
 
 const Page = () => {
     const { isError, isLoading, forecast, submitRequest } = useForecast();
-    const onSubmit = value => {
-        submitRequest(value);
+
+    const onSubmit = location => {
+        submitRequest(location);
     };
 
     return (
         <Fragment>
             <Header />
             {!forecast && (
-                <div className={`${styles.box} position-relative`}>
+                <div className={`${styles.box}`}>
                     {/* form */}
                     {!isLoading && <Form submitSearch={onSubmit} />}
 

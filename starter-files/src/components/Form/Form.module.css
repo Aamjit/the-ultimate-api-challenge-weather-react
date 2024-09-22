@@ -20,8 +20,9 @@
 }
 
 .button:hover {
+    background-image: var(--gradient-rev);
     color: var(--main-text-color);
-    -webkit-transform: scale(0.95);
+    /* -webkit-transform: scale(0.95);
     -ms-transform: scale(0.95);
-    transform: scale(0.95);
+    transform: scale(0.95); */
 }
