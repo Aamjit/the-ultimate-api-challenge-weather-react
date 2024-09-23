@@ -78,8 +78,7 @@ const CurrentDay = props => {
                         <p className="mb-2 text-4xl">{date}</p>
                         <p className="d-flex gap-2 align-items-baseline font-weight-lighter mb-1">
                             <img width="10" height="15" src={locationIcon} alt="location pin" />
-                            {/* <span>{location}</span> */}
-                            <span>{'Imphal'}</span>
+                            <span>{location}</span>
                         </p>
                         {/* Temperature */}
                         {getDaysTemperature(dailyForecasts)}
@@ -87,8 +86,10 @@ const CurrentDay = props => {
                     <div className="w-full text-xl font-sans">{headline.Text}</div>
                 </Col>
                 <Col>
-                    <div className="w-full d-flex justify-evenly gap-4 
-                    bg-slate-700 flex-wrap px-4 py-8 rounded-lg min-w-96">
+                    <div
+                        className="w-full d-flex justify-evenly gap-4 
+                    bg-slate-700 flex-wrap px-4 py-8 rounded-lg min-w-96"
+                    >
                         {/* Day */}
                         <div className="inline-flex gap-3 flex-col flex-1">
                             <h1 className="block w-full font-bold">Day Time</h1>
